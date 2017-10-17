@@ -16,9 +16,9 @@ RUN apk update && \
     mkdir -p /k8s-sync-check && \
     cd /k8s-sync-check && \
     npm install && \
-    cp -a /etc/ssh /etc/ssh.cache && \
     echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
     echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config && \
+    chmod +x /run.sh && \
     rm -rf /var/cache/apk/*
 
 EXPOSE 22
