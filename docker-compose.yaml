@@ -1,0 +1,15 @@
+version: "2"
+services:
+  
+  k8s-sync:
+    image: adito/k8s-sync
+    environment:
+      - ROOT_PASS=rootw
+      - RESSPATH=/k8s-ressources
+    port:
+      -"30000:22"
+    volumes:
+      - /a/ressources:/k8s-ressources
+      - /a/run/k8s-sync/config:/root/.kube/config
+      - /a/run/k8s-sync/authorized_keys:/root/.ssh/authorized_keys
+    restart: unless-stopped
