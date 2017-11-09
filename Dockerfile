@@ -4,7 +4,7 @@ COPY app.js /k8s-sync-check/app.js
 COPY package.json /k8s-sync-check/package.json
 COPY run.sh /run.sh
 COPY supervisor.ini /etc/supervisor.d/supervisor.ini
-ADD https://storage.googleapis.com/kubernetes-release/release/v1.8.0/bin/linux/amd64/kubectl /usr/sbin/
+ADD https://storage.googleapis.com/kubernetes-release/release/v1.8.2/bin/linux/amd64/kubectl /usr/sbin/
 
 RUN apk update && \
     apk add openssh-server openssh-client rsync supervisor fish mdocml-apropos bash && \
